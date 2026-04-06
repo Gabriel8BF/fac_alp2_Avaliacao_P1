@@ -1,0 +1,25 @@
+{
+  "name": "fac_alp2_avaliacao_p1",
+  "version": "1.0.0",
+  "description": "06/04/2026 1) (6,0 pts) Faça um algoritmo que peça para o usuário informar os valores de um array multidimensional 3x3. Exiba o array para o usuário, e após isso, peça para o usuário informar um número de 1 a 3. Dependendo da opção que o usuário escolher acontecerá o seguinte: -1 vai retornar o somatório de todos os elementos da linha 1. -2 vai retornar a multiplicação da diagonal da matriz. -3 vai retornar a quantidade total de números pares presente na matriz inteira -4 encerrar o programa IMPORTANTE: O programa só deve iniciar se eu escolher a opção 4, caso o contrário ao final da operação ele deverá pedir novamente para eu informar uma das 4 opções",
+  "main": "Avaliação_P1.js",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabriel8BF/fac_alp2_Avaliacao_P1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Gabriel8BF/fac_alp2_Avaliacao_P1/issues"
+  },
+  "homepage": "https://github.com/Gabriel8BF/fac_alp2_Avaliacao_P1#readme"
+}
