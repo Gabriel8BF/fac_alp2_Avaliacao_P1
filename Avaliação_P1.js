@@ -26,27 +26,32 @@ function line() {
 }
 let opcao;
 let matriz=[];//inicializando matriz vazia
-let somatorio=0;
-let multdiago=1;
-let contpar=0;
+
+
+
 
 
 for(let i=0;i<3;i++){
     let linha=[];
     for(let j=0;j<3;j++){
-
-        let numero=readlineSync.question("Digite o numero a ser inserido na posição// ["+ (i+1) +"]"+" ["+ (j+1) +"] :");
-        if(isNaN(numero)){//Verificar se of valor não é um numero, "is Not a Number"
+        let numero;
+        do {//repetição até que o numero entrado seja correto.
+            numero=readlineSync.question("Digite o numero a ser inserido na posição// ["+ (i+1) +"]"+" ["+ (j+1) +"] :");
+            if(isNaN(numero)){//Verificar se of valor não é um numero, "is Not a Number"
                    console.log("Valor inválido.Não é número.\n");
-        } else{
-          numero=Number(numero)//Converte o "valor" do parênteses pra um valor numérico, quando possivel.
-            if(Number.isInteger(numero)){//Confere se o numero é inteiro
-                linha.push(numero); //adiciona na linha
-                console.log("Posição ["+ i+1 +"]"+" ["+ j+1 +"] preenchida.")
-                    }else{
-                        console.log("Valor Inválido. Não é inteiro.\n");
-                    }
-            }  
+                   numero = null;
+            } else{
+                numero=Number(numero)//Converte o "valor" do parênteses pra um valor numérico, quando possivel.
+                if(Number.isInteger(numero)){//Confere se o numero é inteiro
+                    linha.push(numero); //adiciona na linha
+                    console.log("Posição ["+ (i+1) +"]"+" ["+ (j+1) +"] preenchida.")
+                }else{
+                    console.log("Valor Inválido. Não é inteiro.\n");
+                    numero = null;
+                }
+            }
+                 
+        } while (numero === null);     
     }
     matriz.push(linha);//adiciona o array linha na posição atual do array linha
 }
@@ -75,6 +80,7 @@ while(opcao != 4){//Sair quando a opção selecionada do menu for 4
 
     switch (opcao){
         case "1":{
+            let somatorio=0;
             for(let i=0;i<3;i++){
                 somatorio += matriz[0][i];
             }
@@ -84,6 +90,7 @@ while(opcao != 4){//Sair quando a opção selecionada do menu for 4
         break    
         }
         case "2":{
+            let multdiago=1;
             for(let i=0;i<3;i++){
                 for(let j=0;j<3;j++){
                     if(i==j){
@@ -97,6 +104,7 @@ while(opcao != 4){//Sair quando a opção selecionada do menu for 4
         break 
         }
         case "3":{
+            let contpar=0;
             for(let i=0;i<3;i++){
                 for(let j=0;j<3;j++){
                     if(matriz[i][j]%2==0){
